@@ -16,7 +16,7 @@ def mel():
     user_message = request.json.get("message", "")
 
     response = client.chat.completions.create(
-        model="mixtral-8x7b-32768",
+        model="mistral-saba-24b",
         messages=[
             {"role": "system", "content": "You are Mel, a no-nonsense engineering manager helping undergrads with a thermodynamics power plant design project. Be clear, helpful, and a little tough."},
             {"role": "user", "content": user_message}
