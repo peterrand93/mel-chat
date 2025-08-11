@@ -28,13 +28,13 @@ def mel():
     user_message = request.json.get("message", "")
 
     response = client.chat.completions.create(
-        model="qwen/qwen3-32b",
+        model="llama-3.3-70b-versatile",
         messages=[
             {"role": "system", "content": MEL_SYSTEM_PROMPT},
             {"role": "user", "content": user_message}
         ],
         temperature=0.7,
-        max_tokens=300
+        max_tokens=3000
     )
 
     reply = response.choices[0].message.content.strip()
